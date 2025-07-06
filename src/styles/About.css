@@ -1,0 +1,134 @@
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 4rem 2rem;
+  background: #fff;
+  margin-left: 6rem;
+}
+
+.about-left {
+  flex: 1 1 45%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.about-subheading {
+  color: #5b8f6e;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.about-heading {
+  font-size: 2.8rem;
+  line-height: 1.2;
+  color: #1a2e24;
+  margin: 10px 0;
+}
+
+.about-description {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-features li {
+  margin: 0.5rem 0;
+  color: #1a2e24;
+  font-weight: 500;
+  align-items: center;
+  gap: 5px;
+  display: flex;
+}
+
+.about-left .visitBtn {
+    width: 150px;
+}
+
+
+.about-right {
+  flex: 1 1 45%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 10%;
+}
+
+.about-main-image {
+  width: 480px;
+  height: 650px;
+  object-fit: cover;
+  border-radius: 250px 250px 20px 200px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.about-inset-wrapper {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    bottom: 60px;
+    background-color: #fff;
+    left: 20px;
+    border-radius: 80px 25px 25px 25px;
+    box-shadow: -20px 20px 20px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+}
+
+.about-inset-image1 {
+    width: 230px;
+    height: 230px;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.about-inset-wrapper2{
+    position: absolute;
+    bottom: 450px;
+    left: 40px;
+    z-index: 1;
+} 
+
+.about-inset-image2 {
+  width: 200px;
+  height: 200px;
+  border-radius: 1rem;
+  z-index: 2;
+}
+
+@keyframes zoomPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.about-decor-circle {
+  position: absolute;
+  top: 10px;
+  left: 120px;
+  width: 85px;
+  height: 85px;
+  border: 22px solid #7ba979;
+  border-radius: 50%;
+  opacity: 1;
+  z-index: 5;
+  animation: zoomPulse 4s infinite ease-in-out;
+}

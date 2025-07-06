@@ -1,0 +1,192 @@
+.topBar {
+    background-color: #1e4a44;
+    color: #ffffff;
+    padding: 0px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+}
+
+.topLeft {
+  display: flex;
+  gap: 25px;
+  margin-left: 10px;
+}
+
+.topLeft span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 400;
+}
+
+.topRight {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* Khoảng cách giữa các link */
+}
+
+.topRight a {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  font-size: 14px;
+}
+
+.topRight a:hover {
+  color: #7ba979; /* Màu khi hover */
+}
+
+.searchLink, .loginLink {
+    padding: 0 10px;
+}
+
+.loginLink span {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.searchLink::after,
+.loginLink::after {
+  content: '';
+  display: inline-block;
+  width: 0.5px;
+  height: 50px;
+  background-color: #3a6a48;
+  margin-left: 40px;
+}
+
+.searchLink, .loginLink, .socialLink {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.searchLink svg, .socialLink svg {
+  font-size: 22px;
+}
+
+.mainNavbar {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    height: 100px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo trái */
+.navlogo {
+    background-color: #76b573;
+    height: 100px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navlogo img {
+  max-height: 50px;
+  max-width: 180px;
+  object-fit: contain;
+}
+
+/* Links giữa */
+.navLinks {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;           /* khoảng cách giữa chữ và icon */
+  text-decoration: none;
+  color: #1e4a44;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navLinks a:hover {
+  color: #76b573;
+}
+
+
+/* Bên phải */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  color: #1e4a44;
+  font-weight: 500;
+  font-size: 16px;
+  gap: 6px;
+}
+
+/* Nút book */
+.visitBtn {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  background-color: #7dbd72;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.4s ease;
+}
+
+/* Overlay tạo hiệu ứng từ 2 cạnh vào giữa */
+.visitBtn::before,
+.visitBtn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #3a6d50;
+  z-index: 1;
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.visitBtn::before {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.visitBtn::after {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.visitBtn:hover::before {
+  transform: translateX(0);
+}
+
+.visitBtn:hover::after {
+  transform: translateX(0);
+}
+
+/* Text bên trong nút */
+.visitBtn span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s ease;
+}
+
+/* Khi hover, đổi màu chữ */
+.visitBtn:hover span {
+  color: #ffffff;
+}

@@ -1,0 +1,65 @@
+.stats-bar {
+  background-color: #184C43;
+  padding: 80px 20px;
+}
+
+.stats-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 5px;
+}
+
+.stats-item {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #fff; 
+}
+
+.stats-icon {
+  width: 90px;
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0.1); /* Màu nhạt ban đầu */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.4s ease; /* Hiệu ứng mượt */
+}
+
+.golf-icon {
+  color: #fff;
+  font-size: 40px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect: nền đậm hơn và icon đổi màu */
+.stats-icon:hover {
+  background-color: #fff;
+}
+
+.stats-icon:hover .golf-icon {
+  color: #6edca1;
+}
+
+
+.stats-content {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.stats-value {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.stats-label {
+  font-size: 20px;
+  margin: 0;
+  opacity: 0.9;
+}

@@ -1,0 +1,138 @@
+.courses-section {
+    padding: 4rem 1rem;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.courses-section h4 {
+    font-size: 0.9rem;
+    color: #2c7a63;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.courses-heading {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    line-height: 1.3;
+}
+
+.courses-grid {
+    margin: 0 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.courses-card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.courses-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.courses-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px 20px 20px 60px;
+}
+
+.courses-subheading {
+    padding: 0 40px 20px;
+    text-align: left;
+}
+
+.courses-button {
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.4s ease;
+}
+
+/* Hai lớp phủ trắng từ cạnh ép vào giữa */
+.courses-button::before,
+.courses-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #7dbd72;
+  z-index: 1;
+  transition: transform 0.5s ease;
+  pointer-events: none;
+}
+
+.courses-button::before {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.courses-button::after {
+  right: 0;
+  transform: translateX(100%);
+}
+
+.courses-button:hover::before {
+  transform: translateX(0);
+}
+
+.courses-button:hover::after {
+  transform: translateX(0);
+}
+
+/* Nội dung chữ */
+.courses-button span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s ease;
+}
+
+.courses-button:hover span {
+  color: #ffffff;
+}
+
+
+.courses-title {
+  margin-top: 40px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.courses-desc {
+  margin: 15px 0 25px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.courses-section .visitBtn {
+  margin-top: 40px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+
+}

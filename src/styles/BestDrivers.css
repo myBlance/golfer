@@ -1,0 +1,153 @@
+/* BestDrivers.css */
+
+.golf-store {
+  background-color: #eff2f1;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.golf-store-subtitle {
+  color: #6f8f7d;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.golf-store-title {
+  font-size: 2.4rem;
+  font-weight: normal;
+  color: #26372b;
+  line-height: 1.3;
+  margin-bottom: 3rem;
+}
+
+.golf-store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: #eff2f1;
+  border-radius: 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+
+.product-card-image {
+  background-color: #f9f9f9;
+  border-radius: 20px 20px 50px 20px;
+  padding: 2rem;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card:hover .product-image {
+   transform: scale(1.2);
+}
+
+.product-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.product-info {
+  padding: 1.5rem 0;
+  border-top: 1px solid #eee;
+  background-color: #eff2f1;
+  text-align: left;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  color: #26372b;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.product-price {
+  color: #6f8f7d;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Hover actions (hidden by default) */
+.hover-actions {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover .hover-actions {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Add to cart button slide up */
+.hover-actions .visitBtn {
+  border: none;
+  margin-top: 250px;
+  margin-right: 60px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover .visitBtn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hover-actions .visitBtn:hover {
+  background-color: #3b4f3d;
+}
+
+/* Icon group stays the same */
+.icon-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-top: -280px;
+  margin-left: 160px;
+}
+
+/* Icons slide from right */
+.hover-icon {
+  color: #26372b;
+  cursor: pointer;
+  font-size: 1.3rem;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover .hover-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hover-icon:hover {
+  color: #6f8f7d;
+}

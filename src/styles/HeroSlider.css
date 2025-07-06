@@ -1,0 +1,205 @@
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+}
+
+.banner-curve {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    height: 45px;
+    clip-path: ellipse(50% 45px at 50% 100%);
+    z-index: 3; 
+}
+
+/* Slide */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Background riêng biệt */
+.slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  transform: scale(1);
+  transition: transform 5s ease;
+}
+
+.slide.active .slide-bg {
+  transform: scale(1.1);
+}
+
+/* Lớp phủ nền tối và nội dung */
+.slide-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.slide-content {
+  max-width: 1000px;
+  text-align: left;
+  margin-left: 50px;
+  color: #fff;
+  z-index: 2;
+}
+
+.slide-content h4 {
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.slide-content h1 {
+  font-size: 48px;
+  margin: 0 0 20px;
+  line-height: 1.1;
+}
+
+.slide-content p {
+  font-size: 16px;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+/* Effect initial state */
+.slide-content .subtitle,
+.slide-content .title,
+.slide-content .desc,
+.slide-content .visitBtn {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* subtitle từ trên xuống */
+.slide-content .subtitle {
+  transform: translateY(-20px);
+}
+.slide-content.active .subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+
+/* title, desc, btn từ dưới lên */
+.slide-content .title,
+.slide-content .desc,
+.slide-content .visitBtn {
+  transform: translateY(40px);
+}
+
+.slide-content.active .title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+
+.slide-content.active .desc {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+
+.slide-content.active .visitBtn {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+
+
+.learn-more {
+  background-color: #76b573;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.learn-more:hover {
+  background-color: #5e9e5a;
+}
+
+/* Nút điều hướng */
+.hero-slider .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  background-color: white;
+  color: #7dbd72;
+  border: none;
+  border-radius: 50%;
+  padding: 8px 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  z-index: 10;
+  transition: color 0.4s ease;
+}
+
+/* Overlay trượt từ trên xuống */
+.nav-btn::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7dbd72;
+  transition: top 0.4s ease;
+  z-index: 0;
+}
+
+.nav-btn:hover::before {
+  top: 0;
+}
+
+/* Icon bên trong */
+.nav-btn svg {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+  color: #7dbd72;
+}
+
+/* Đổi màu icon khi hover */
+.nav-btn:hover svg {
+  color: #ffffff;
+}
+
+.nav-btn.prev {
+  left: 20px;
+}
+
+.nav-btn.next {
+  right: 20px;
+}
