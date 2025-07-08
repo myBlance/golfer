@@ -1,4 +1,3 @@
-import React from 'react';
 import '../styles/About.css';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 

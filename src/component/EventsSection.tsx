@@ -33,56 +33,48 @@ const mockEvents: Event[] = [
 ];
 
 const EventsSection: React.FC = () => {
-  const [startIndex, setStartIndex] = useState(0);
-  const visibleCount = 3;
+    const [startIndex, setStartIndex] = useState(0);
+    const visibleCount = 3;
 
-  const prevSlide = () => {
-    setStartIndex((prev) => (prev - 1 + mockEvents.length) % mockEvents.length);
-  };
+    const prevSlide = () => {
+        setStartIndex((prev) => (prev - 1 + mockEvents.length) % mockEvents.length);
+    };
 
-  const nextSlide = () => {
-    setStartIndex((prev) => (prev + 1) % mockEvents.length);
-  };
+    const nextSlide = () => {
+        setStartIndex((prev) => (prev + 1) % mockEvents.length);
+    };
 
-  const getVisibleEvents = () => {
-    const result: Event[] = [];
-    for (let i = 0; i < visibleCount; i++) {
-      result.push(mockEvents[(startIndex + i) % mockEvents.length]);
-    }
-    return result;
-  };
-
-  return (
-    <section className="events-section">
-      <p className="events-subtitle"> • UPCOMING EVENTS • </p>
-      <h2 className="events-title">
-        Let Us Make Your Golf Trip <br /> GOLF EVENTS
-      </h2>
-      
-      <div className="events-cards">
-  <div
-    className="events-cards-track"
-    style={{
-      transform: `translateX(-${startIndex * (100 / visibleCount)}%)`,
-    }}
-  >
-    {mockEvents.concat(mockEvents).map((event, idx) => (
-      <EventCard key={idx} event={event} />
-    ))}
-  </div>
-</div>
+    return (
+        <section className="events-section">
+            <p className="events-subtitle"> • UPCOMING EVENTS • </p>
+            <h2 className="events-title">
+                LET US MAKE YOUR GOLF TRIP GOLF EVENTS
+            </h2>
+            
+            <div className="events-cards">
+                <div
+                    className="events-cards-track"
+                    style={{
+                    transform: `translateX(-${startIndex * (100 / visibleCount)}%)`,
+                    }}
+                >
+                    {mockEvents.concat(mockEvents).map((event, idx) => (
+                    <EventCard key={idx} event={event} />
+                    ))}
+                </div>
+            </div>
 
 
-      <div className="events-pagination">
-        <button className="nav-btn prev" onClick={prevSlide}>
-          <ArrowBackIcon />
-        </button>
-        <button className="nav-btn next" onClick={nextSlide}>
-          <ArrowForwardIcon />
-        </button>
-      </div>
-    </section>
-  );
+            <div className="events-pagination">
+                <button className="nav-btn prev" onClick={prevSlide}>
+                    <ArrowBackIcon />
+                </button>
+                <button className="nav-btn next" onClick={nextSlide}>
+                    <ArrowForwardIcon />
+                </button>
+            </div>
+        </section>
+    );
 };
 
 export default EventsSection;

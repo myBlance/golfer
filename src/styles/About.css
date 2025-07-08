@@ -4,15 +4,17 @@
   justify-content: space-between;
   padding: 4rem 2rem;
   background: #fff;
-  margin-left: 6rem;
+  margin: 0;
 }
 
 .about-left {
   flex: 1 1 45%;
-  max-width: 500px;
+  max-width: 450px;
+  margin-left: 10%;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 30px;
   text-align: left;
 }
 
@@ -24,22 +26,23 @@
 }
 
 .about-heading {
-  font-size: 2.8rem;
-  line-height: 1.2;
-  color: #1a2e24;
-  margin: 10px 0;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #1a2e24;
+    margin: 10px 0;
 }
 
 .about-description {
-  color: #555;
-  line-height: 1.6;
-  margin: 0;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .about-features {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .about-features li {
@@ -67,8 +70,8 @@
 }
 
 .about-main-image {
-  width: 480px;
-  height: 650px;
+  width: 420px;
+  height: 600px;
   object-fit: cover;
   border-radius: 250px 250px 20px 200px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -131,4 +134,45 @@
   opacity: 1;
   z-index: 5;
   animation: zoomPulse 4s infinite ease-in-out;
+}
+
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    padding: 40px 0px;
+    gap: 32px;
+  }
+
+  .about-heading {
+    font-size: 30px;
+  }
+
+  .about-description {
+    font-size: 14px;
+    width: 330px;
+  }
+
+  .about-features li {
+    font-size: 14px;
+
+  }
+
+    .about-right {
+        position: relative;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .about-main-image {
+        width: 300px;
+        height: auto;
+    }
+    
+    .about-inset-wrapper,
+    .about-inset-wrapper2,
+    .about-decor-circle {
+        display: none;
+    }
 }

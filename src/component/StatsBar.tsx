@@ -68,7 +68,7 @@ const StatsBar = () => {
                 {statsData.map((item) => (
                     <div className="stats-item" key={item.id}>
                         <div className="stats-icon">
-                            <GolfCourseSharpIcon className="golf-icon" />
+                            <GolfCourseSharpIcon className="golf-icon" sx={{fontSize: '40px'}} />
                         </div>
                         <div className="stats-content">
                             <h3 className="stats-value">

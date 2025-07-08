@@ -45,16 +45,16 @@ export default function FAQSection() {
             <Box className="faq-container">
                 {/* LEFT SIDE */}
                 <Box className="faq-left">
-                    <Typography variant="subtitle2" className="faq-subtitle">
+                    <div className="faq-subtitle">
                         FAQ’S •
-                    </Typography>
-                    <Typography variant="h3" className="faq-title">
+                    </div>
+                    <div className="faq-title">
                         Frequently Asked Questions
-                    </Typography>
-                    <Typography variant="body1" className="faq-description">
+                    </div>
+                    <div className="faq-description">
                         Lorem ipsum dolor sit amet consectetur. Nam quis bibendum lacinia eu
                         id in. Quisque porttitor tortor blandit nunc.
-                    </Typography>
+                    </div>
 
                     <Stack spacing={2}>
                         {faqItems.map((item) => (

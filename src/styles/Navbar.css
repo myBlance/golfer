@@ -19,6 +19,7 @@
   align-items: center;
   gap: 4px;
   font-weight: 400;
+  
 }
 
 .topRight {
@@ -189,4 +190,123 @@
 /* Khi hover, đổi màu chữ */
 .visitBtn:hover span {
   color: #ffffff;
+}
+
+
+
+.navmenu svg{
+    color: #ffffff;
+}
+
+.navmenu {
+  display: none;
+  cursor: pointer;
+  padding: 5px;
+  height: 24px;
+  background-color: #7dbd72;
+}
+
+@media (max-width: 1024px) {
+    .navLinks {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        padding-bottom: 16px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        z-index: 50;
+    }
+
+    .navLinks .closeBtn {
+        text-align: right;
+        margin-left: 250px;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px;
+    }
+
+    .navLinks .closeBtn span {
+        display: inline-block;
+        color: #ffffff;
+    }
+
+    .navLinks a{
+        color: #ffffff;
+    }
+
+    .navLinks.show {
+        display: flex;
+    }
+
+    .navmenu {
+        display: block;
+        margin-left: 30px;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .mainNavbar{
+        height: 80px;
+    }
+
+    .navlogo{
+        height: 80px;
+    }
+
+    .navlogo img{
+        width: 150px;
+    }
+  
+
+  .navRight .phone {
+    display: none;
+  }
+
+  .navmenu {
+    display: block;
+    margin-left: 30px;
+  }
+
+  .topBar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 16px;
+  }
+
+  .topLeft, .topRight {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .topLeft span, .topRight span {
+    font-size: 14px;
+  }
+
+  .topRight svg {
+    font-size: 16px;
+  }
+
+  .searchLink::after,
+.loginLink::after {
+    display: none;
+    
+}
+
+  .topLeft {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+    .navRight .visitBtn{
+        display: none;
+    }
 }

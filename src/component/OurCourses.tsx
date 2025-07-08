@@ -43,6 +43,7 @@ const OurCourses: React.FC = () => {
                     <div className="courses-image-wrapper">
                         <div className="courses-image-wrap">
                             <img src={item.image} alt={item.title} className="courses-image" />
+                            <img src={item.image} alt={item.title} className="courses-image-overlay" />
                         </div>        
                     </div>
                     <div className="courses-subheading">    

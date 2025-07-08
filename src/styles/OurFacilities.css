@@ -2,12 +2,12 @@
 .facilities-section {
   padding: 4rem 1rem;
   text-align: center;
-  background-color: #f8f8f8;
+  background-color: #ffffff;
 }
 
 /* Top heading */
 .facilities-section h4 {
-  font-size: 0.9rem;
+  font-size: 18px;
   color: #2c7a63;
   font-weight: 600;
   display: inline-flex;
@@ -17,8 +17,8 @@
 }
 
 .facilities-heading {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 34px;
+  font-weight: 500;
   color: #222;
   max-width: 700px;
   margin: 0 auto 3rem;
@@ -28,21 +28,21 @@
 /* Grid layout */
 .facilities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 2rem;
-  max-width: 1270px;
+  max-width: 1050px;
   margin: 0 auto;
 }
 
 /* Card style */
 .facility-card {
   background-color: #fff;
-  padding: 0rem 1.5rem 2.5rem;
+  padding: 0rem 1.3rem 2.5rem;
   border-top-left-radius: 140px ;
   border-top-right-radius: 140px ;
   border-bottom-left-radius: 70px;
   border-bottom-right-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 
@@ -50,15 +50,15 @@
 
 .facility-image-wrapper {
   position: relative;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto 1.5rem;
 }
 
 .facility-image-wrap{
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     overflow: hidden;
     border-radius: 50%;
     margin: 0 auto 1.5rem;
@@ -80,8 +80,8 @@
     position: absolute;
     top: 10px;
     left: 0;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     background-color: #e0fff6;
     z-index: 0;
@@ -129,5 +129,16 @@
 }
 
 .arrow-button:hover {
-  background: #e7f8f1;
+  background: #45a37c;
+}
+
+.arrow-button:hover svg{
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    .facility-card {
+        width: 200px;
+        margin-left: 50px;
+    }
 }

@@ -32,7 +32,6 @@
 
 .golf-icon {
   color: #fff;
-  font-size: 40px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -53,7 +52,7 @@
 
 .stats-value {
   font-size: 50px;
-  font-weight: bold;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -62,4 +61,10 @@
   font-size: 20px;
   margin: 0;
   opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .stats-container{
+        justify-content: left;
+    }
 }

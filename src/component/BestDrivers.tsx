@@ -38,44 +38,44 @@ const products: Product[] = [
 ];
 
 const BestDrivers: React.FC = () => {
-  return (
-    <section className="golf-store">
-      <p className="golf-store-subtitle">• BEST DRIVERS •</p>
-      <h2 className="golf-store-title">
-        COMPLETE GOLF STORE WITH ALL THE<br /> GEAR YOU REQUIRE
-      </h2>
-      <div className="golf-store-grid">
-        {products.map((product) => (
-          <div key={product.id} className="product-card">
-            <div className="product-card-image">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="product-image"
-              />
-            </div>
-            <div className="product-info">
-              <h3 className="product-name">{product.name}</h3>
-              <p className="product-price">{product.price}</p>
-            </div>
+    return (
+        <section className="golf-store">
+            <p className="golf-store-subtitle">• BEST DRIVERS •</p>
+            <h2 className="golf-store-title">
+                COMPLETE GOLF STORE WITH ALL THE GEAR YOU REQUIRE
+            </h2>
+            <div className="golf-store-grid">
+                {products.map((product) => (
+                    <div key={product.id} className="product-card">
+                        <div className="product-card-image">
+                            <img
+                                src={product.image}
+                                alt={product.name}
+                                className="product-image"
+                            />
+                        </div>
+                        <div className="product-info">
+                            <h3 className="product-name">{product.name}</h3>
+                            <p className="product-price">{product.price}</p>
+                        </div>
 
-            {/* Hover actions */}
-            <div className="hover-actions">
-                <button className="visitBtn">
-                    <span>
-                        Add to Cart
-                    </span>
-                </button>
-              <div className="icon-group">
-                <FavoriteBorderIcon className="hover-icon" />
-                <CachedOutlinedIcon className="hover-icon" />
-              </div>
+                        {/* Hover actions */}
+                        <div className="hover-actions">
+                            <button className="visitBtn">
+                                <span>
+                                    Add to Cart
+                                </span>
+                            </button>
+                        <div className="icon-group">
+                            <FavoriteBorderIcon className="hover-icon" />
+                            <CachedOutlinedIcon className="hover-icon" />
+                        </div>
+                        </div>
+                    </div>
+                ))}
             </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default BestDrivers;

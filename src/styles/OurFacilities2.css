@@ -21,6 +21,7 @@
 .subtitle {
   color: #a0c49d;
   font-size: 1rem;
+  font-weight: 500;
   letter-spacing: 1px;
   margin-bottom: 0.5rem;
 }
@@ -139,4 +140,38 @@
   margin-top: 50px;
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 768px) {
+  .our-facilities {
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 32px;
+  }
+
+  .our-facilities-content{
+    margin: 0;
+  }
+
+  .headline {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .button-group {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .our-facilities-image img {
+    display: none;
+  }
 }

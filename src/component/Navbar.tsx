@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Navbar.css";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -10,8 +10,15 @@ import { FaTwitter } from "react-icons/fa";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { LiaPhoneSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
+import MenuIcon from '@mui/icons-material/Menu';
 
 export const Navbar: React.FC = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return (
         <header>
             {/* Top Bar */}
@@ -54,7 +61,12 @@ export const Navbar: React.FC = () => {
                 <div className="navlogo">
                     <img src="/assets/images/logo-2.png" alt="Golfer Logo" />
                 </div>
-                <ul className="navLinks">
+                <ul className={`navLinks ${isMenuOpen ? "show" : ""}`}>
+                    {isMenuOpen && (
+                        <li className="closeBtn" onClick={() => setIsMenuOpen(false)}>
+                        <span>&times;</span>
+                        </li>
+                    )}
                     <li><a href="#">HOME <ExpandMoreIcon/></a></li>
                     <li><a href="#">PAGES <ExpandMoreIcon/></a></li>
                     <li><a href="#">COURSES <ExpandMoreIcon/></a></li>
@@ -62,6 +74,9 @@ export const Navbar: React.FC = () => {
                     <li><a href="#">BLOG <ExpandMoreIcon/></a></li>
                     <li><a href="#">CONTACT</a></li>
                 </ul>
+                <div className="navmenu" onClick={toggleMenu}>
+                    <MenuIcon/>
+                </div>
                 <div className="navRight">
                     <span className="phone">
                         <LiaPhoneSolid  style={{fontSize: '22px', marginRight: '4px', color:'#7ba979' }}/>
