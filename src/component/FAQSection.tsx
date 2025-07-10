@@ -79,12 +79,14 @@ export default function FAQSection() {
 
                 {/* RIGHT SIDE */}
                 <Box className="faq-right">
-                    <Box
-                        component="img"
-                        src="/assets/images/faq-1.jpg"
-                        alt="Main"
-                        className="faq-main-image"
-                    />
+                    <div className='about-image-wrapper'>
+                        <Box
+                            component="img"
+                            src="/assets/images/faq-1.jpg"
+                            alt="Main"
+                            className="faq-main-image"
+                        />
+                    </div>
                     <Box className="faq-inset-wrapper">
                         <Box className="faq-inset-text">
                             <Box

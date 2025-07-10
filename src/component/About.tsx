@@ -37,7 +37,13 @@ const About: React.FC = () => {
 
             <div className="about-right">
                 <div className="about-decor-circle"></div>
-                <img src='/assets/images/about-1.jpg' alt="Main" className="about-main-image" />
+                <div className="about-image-wrapper">
+                    <img
+                        src="/assets/images/about-1.jpg"
+                        alt="Main"
+                        className="about-main-image"
+                    />
+                </div>
                 <div className="about-inset-wrapper">
                     <img src='/assets/images/about-2.jpg' alt="Inset 1" className="about-inset-image1" />
                 </div>

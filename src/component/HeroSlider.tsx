@@ -21,7 +21,7 @@ const slides = [
         title: "UNPARALLELED PREMIUM GOLF EXPERIENCE",
         subtitle: "LEAVE YOUR MARK",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Turpis ridiculus tellus.",
-        img: "/public/assets/images/banner-3.jpg",
+        img: "/assets/images/banner-3.jpg",
     },
 ];
 const HeroSlider = () => {

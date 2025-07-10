@@ -78,6 +78,35 @@
   z-index: 2;
 }
 
+.about-image-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+/* Vệt sáng giả lập qua ::after */
+.about-image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -50%;
+  width: 200%;
+  height: 300%;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  transform: rotate(0deg) translateY(-100%);
+  transition: transform 1.2s ease;
+  pointer-events: none;
+}
+
+.about-image-wrapper:hover::after {
+  transform: rotate(0deg) translateY(100%);
+}
+
 .about-inset-wrapper {
     position: absolute;
     width: 260px;
