@@ -1,19 +1,18 @@
-// src/routes/ProtectedRoute.tsx
 import React from "react";
 import { Navigate } from "react-router-dom";
 
 interface Props {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 const ProtectedRoute: React.FC<Props> = ({ children }) => {
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-  if (!isLoggedIn) {
-    return <Navigate to="/login" replace />;
-  }
+    if (!isLoggedIn) {
+        return <Navigate to="/login" replace />;
+    }
 
-  return <>{children}</>;
+    return <>{children}</>;
 };
 
 export default ProtectedRoute;

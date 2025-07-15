@@ -9,64 +9,62 @@ import MembersPage from "./pages/MemberPage";
 import RankingPage from "./pages/RankingPage";
 
 const App: React.FC = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        
-        <Route
-          path="/"
-          element={
-              <Home />
-          }
-        />
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/login" element={<LoginPage />} />
+                
+                <Route
+                    path="/"
+                    element={
+                        <Home />
+                    }
+                />
 
-        <Route
-          path="/flights"
-          element={
-            <ProtectedRoute>
-              <div>Flights Page</div>
-            </ProtectedRoute>
-          }
-        />
+                <Route
+                    path="/flights"
+                    element={
+                        <ProtectedRoute>
+                            <div>Flights Page</div>
+                        </ProtectedRoute>
+                    }
+                />
 
-        <Route
-          path="/events"
-          element={
-              <div>Event Page</div>
-          }
-        />
+                <Route
+                    path="/events"
+                    element={
+                        <div>Event Page</div>
+                    }
+                />
 
-        <Route
-          path="/posts"
-          element={
-              <div>Post Page</div>
-          }
-        />
+                <Route
+                    path="/posts"
+                    element={
+                        <div>Post Page</div>
+                    }
+                />
 
-        <Route
-            path="/members/:id"
-            element={
-                <ClubMemberWrapper>
-                <MembersPage />
-                </ClubMemberWrapper>
-            }
-        />
+                <Route
+                    path="/members/:id"
+                    element={
+                        <ClubMemberWrapper>
+                        <MembersPage />
+                        </ClubMemberWrapper>
+                    }
+                />
 
+                <Route
+                    path="/ranking/:id"
+                    element={
+                        <ClubMemberWrapper>
+                            <RankingPage />
+                        </ClubMemberWrapper>
+                    }
+                />
 
-            <Route
-            path="/ranking/:id"
-            element={
-                <ClubMemberWrapper>
-                    <RankingPage />
-                </ClubMemberWrapper>
-            }
-            />
-
-
-      </Routes>
-    </BrowserRouter>
-  );
+            </Routes>
+        </BrowserRouter>
+    );
 };
 
 export default App;

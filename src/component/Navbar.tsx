@@ -51,13 +51,13 @@ export const Navbar: React.FC = () => {
                     </Link>
                     
                     {isLoggedIn ? (
-                    <Link to="/" onClick={logout} className="loginLink" >
-                        Đăng xuất
-                    </Link>
-                    ) : (
-                    <Link to="/login" className="loginLink">
-                        <span>Login</span>
-                    </Link>
+                        <Link to="/" onClick={logout} className="loginLink" >
+                            Đăng xuất
+                        </Link>
+                        ) : (
+                        <Link to="/login" className="loginLink">
+                            <span>Login</span>
+                        </Link>
                     )}
                     
                     <Link to="/facebook" className="socialLink">
