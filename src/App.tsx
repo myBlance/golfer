@@ -7,6 +7,9 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import ClubMemberWrapper from "./routes/ClubMemberRoute";
 import MembersPage from "./pages/MemberPage";
 import RankingPage from "./pages/RankingPage";
+import FightsPage from "./pages/FlightsPage";
+import EventPage from "./pages/EventPage";
+import PostPage from "./pages/PostPage";
 
 const App: React.FC = () => {
     return (
@@ -25,7 +28,7 @@ const App: React.FC = () => {
                     path="/flights"
                     element={
                         <ProtectedRoute>
-                            <div>Flights Page</div>
+                        <FightsPage/>
                         </ProtectedRoute>
                     }
                 />
@@ -33,14 +36,14 @@ const App: React.FC = () => {
                 <Route
                     path="/events"
                     element={
-                        <div>Event Page</div>
+                        <EventPage />
                     }
                 />
 
                 <Route
                     path="/posts"
                     element={
-                        <div>Post Page</div>
+                        <PostPage/>
                     }
                 />
 
@@ -57,7 +60,7 @@ const App: React.FC = () => {
                     path="/ranking/:id"
                     element={
                         <ClubMemberWrapper>
-                            <RankingPage />
+                        <RankingPage />
                         </ClubMemberWrapper>
                     }
                 />
