@@ -3,7 +3,6 @@ import "../styles/Navbar.css";
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { RiSearchLine } from "react-icons/ri";
 import { FaFacebookF } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
@@ -14,10 +13,19 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 export const Navbar: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+
+    const logout: React.MouseEventHandler<HTMLAnchorElement> = (e) => {
+        e.preventDefault();
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "/"; 
+    }
+
+    const currentClubId = localStorage.getItem("currentClubId") || "2";
 
     return (
         <header>
@@ -41,9 +49,17 @@ export const Navbar: React.FC = () => {
                     <Link to="/search" className="searchLink">
                         <RiSearchLine />
                     </Link>
+                    
+                    {isLoggedIn ? (
+                    <Link to="/" onClick={logout} className="loginLink" >
+                        Đăng xuất
+                    </Link>
+                    ) : (
                     <Link to="/login" className="loginLink">
                         <span>Login</span>
                     </Link>
+                    )}
+                    
                     <Link to="/facebook" className="socialLink">
                         <FaFacebookF />
                     </Link>
@@ -64,15 +80,15 @@ export const Navbar: React.FC = () => {
                 <ul className={`navLinks ${isMenuOpen ? "show" : ""}`}>
                     {isMenuOpen && (
                         <li className="closeBtn" onClick={() => setIsMenuOpen(false)}>
-                        <span>&times;</span>
+                            <span>&times;</span>
                         </li>
                     )}
-                    <li><a href="#">HOME <ExpandMoreIcon/></a></li>
-                    <li><a href="#">PAGES <ExpandMoreIcon/></a></li>
-                    <li><a href="#">COURSES <ExpandMoreIcon/></a></li>
-                    <li><a href="#">SHOP <ExpandMoreIcon/></a></li>
-                    <li><a href="#">BLOG <ExpandMoreIcon/></a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="/">Trang chủ </a></li>
+                    <li><a href="/flights">Trận đấu </a></li>
+                    <li><a href="/events">Sự kiện </a></li>
+                    <li><a href="/posts">Tin tức </a></li>
+                    <Link to={`/members/${currentClubId}`}>Thành viên</Link>
+                    <Link to={`/ranking/${currentClubId}`}>Xếp hạng</Link>
                 </ul>
                 <div className="navmenu" onClick={toggleMenu}>
                     <MenuIcon/>

@@ -18,9 +18,9 @@ const Home: React.FC = () => {
         <div>
             <Navbar/>
             <HeroSlider/>
+            <OurCourses/>
             <OurFacilities/>
             <About/>
-            <OurCourses/>
             <StatsBar/>
             <WhyChooseUs/>
             <EventsSection/>

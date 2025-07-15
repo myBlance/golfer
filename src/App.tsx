@@ -1,15 +1,72 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// src/App.tsx
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import './App.css';
+import LoginPage from "./pages/LoginPage";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import ClubMemberWrapper from "./routes/ClubMemberRoute";
+import MembersPage from "./pages/MemberPage";
+import RankingPage from "./pages/RankingPage";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<LoginPage />} />
+        
+        <Route
+          path="/"
+          element={
+              <Home />
+          }
+        />
+
+        <Route
+          path="/flights"
+          element={
+            <ProtectedRoute>
+              <div>Flights Page</div>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/events"
+          element={
+              <div>Event Page</div>
+          }
+        />
+
+        <Route
+          path="/posts"
+          element={
+              <div>Post Page</div>
+          }
+        />
+
+        <Route
+            path="/members/:id"
+            element={
+                <ClubMemberWrapper>
+                <MembersPage />
+                </ClubMemberWrapper>
+            }
+        />
+
+
+            <Route
+            path="/ranking/:id"
+            element={
+                <ClubMemberWrapper>
+                    <RankingPage />
+                </ClubMemberWrapper>
+            }
+            />
+
+
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
