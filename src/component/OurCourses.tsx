@@ -31,24 +31,27 @@ const OurCourses: React.FC = () => {
     // State lưu danh sách các club đã bấm tham gia (chờ duyệt)
     const [pendingClubs, setPendingClubs] = useState<number[]>([]);
 
-    // Các club đã tham gia thành công (ví dụ ở đây club2)
     const joinedClubs = [2];
 
-    // Determine login status once per render
     const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
     const handleJoinClick = (id: number) => {
         if (!isLoggedIn) {
             navigate("/login");
-        } else {
-            if (joinedClubs.includes(id)) {
-                navigate(`/members/${id}`);
-                return;
-            }
+            return;
+        }
 
-            if (!pendingClubs.includes(id)) {
-                setPendingClubs([...pendingClubs, id]);
-            }
+        if (joinedClubs.includes(id)) {
+            navigate(`/members/${id}`);
+            return;
+        }
+
+        if (pendingClubs.includes(id)) {
+            // Nếu đã trong danh sách chờ, thì nhấn lại sẽ hủy yêu cầu
+            setPendingClubs(prev => prev.filter(clubId => clubId !== id));
+        } else {
+            // Nếu chưa chờ duyệt, thêm vào danh sách chờ
+            setPendingClubs(prev => [...prev, id]);
         }
     };
 
@@ -78,14 +81,14 @@ const OurCourses: React.FC = () => {
                             <p className="courses-desc">{item.description}</p>
                             <button className="courses-button" onClick={() => handleJoinClick(item.id)}>
                                 <span>
-                                {!isLoggedIn
-                                    ? "THAM GIA NGAY"
-                                    : joinedClubs.includes(item.id)
-                                        ? "XEM"
-                                        : pendingClubs.includes(item.id)
-                                        ? "CHỜ PHÊ DUYỆT"
-                                        : "THAM GIA NGAY"}
-
+                                    {!isLoggedIn
+                                        ? "THAM GIA NGAY"
+                                        : joinedClubs.includes(item.id)
+                                            ? "XEM"
+                                            : pendingClubs.includes(item.id)
+                                            ? "CHỜ PHÊ DUYỆT"
+                                            : "THAM GIA NGAY"
+                                    }
                                 </span>
                             </button>
                         </div>

@@ -1,7 +1,7 @@
 .courses-section {
     padding: 4rem 1rem;
     text-align: center;
-    background-color: #f8f8f8;
+    background-color: #ffffff;
 }
 
 .courses-section h4 {
@@ -39,35 +39,35 @@
 }
 
 .courses-image-wrapper {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
 }
 
 .courses-image {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 20px 20px 20px 60px;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px 20px 20px 60px;
 }
 
 .courses-image-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  transform: translateY(-100%);
-  opacity: 0;
-  transition: transform 0.5s ease, opacity 0.5s ease;
-  pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px 20px 20px 60px;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    pointer-events: none;
 }
 
 .courses-card:hover .courses-image-overlay {
-  transform: translateY(0);
-  opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
 }
 
 
@@ -77,84 +77,83 @@
 }
 
 .courses-button {
-  position: relative;
-  overflow: hidden;
-  font-weight: 500;
-  font-size: 14px;
-  margin-top: 0;
-  margin-bottom: 15px;
-  padding: 0.5rem 1rem;
-  background-color: #fff;
-  color: #000;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.4s ease;
 }
 
 /* Hai lớp phủ trắng từ cạnh ép vào giữa */
 .courses-button::before,
 .courses-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background-color: #7dbd72;
-  z-index: 1;
-  transition: transform 0.5s ease;
-  pointer-events: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #7dbd72;
+    z-index: 1;
+    transition: transform 0.5s ease;
+    pointer-events: none;
 }
 
 .courses-button::before {
-  left: 0;
-  transform: translateX(-100%);
+    left: 0;
+    transform: translateX(-100%);
 }
 
 .courses-button::after {
-  right: 0;
-  transform: translateX(100%);
+    right: 0;
+    transform: translateX(100%);
 }
 
 .courses-button:hover::before {
-  transform: translateX(0);
+    transform: translateX(0);
 }
 
 .courses-button:hover::after {
-  transform: translateX(0);
+    transform: translateX(0);
 }
 
 /* Nội dung chữ */
 .courses-button span {
-  position: relative;
-  z-index: 2;
-  transition: color 0.5s ease;
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s ease;
 }
 
 .courses-button:hover span {
-  color: #ffffff;
+    color: #ffffff;
 }
 
 
 .courses-title {
-  margin-top: 40px;
-  font-size: 22px;
-  font-weight: 600;
+    margin-top: 40px;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .courses-desc {
-  margin: 15px 0 25px;
-  color: #555;
-  font-size: 16px;
-  line-height: 1.5;
+    margin: 15px 0 25px;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .courses-section .visitBtn {
-  margin-top: 40px;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-
+    margin-top: 40px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 

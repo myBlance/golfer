@@ -6,8 +6,8 @@ const MembersPage = () => {
     return (
         <div>
             <Navbar/>
-            <h2>Members Page</h2>
-            <p>Club ID: {id}</p>
+            <h2>Danh sách thành viên Club {id}</h2>
+            <p>Danh sách các thành viên và thông tin nổi bật</p>            
         </div>
     );
 };

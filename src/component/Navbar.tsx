@@ -83,10 +83,10 @@ export const Navbar: React.FC = () => {
                             <span>&times;</span>
                         </li>
                     )}
-                    <li><a href="/">Trang chủ </a></li>
-                    <li><a href="/flights">Trận đấu </a></li>
-                    <li><a href="/events">Sự kiện </a></li>
-                    <li><a href="/posts">Tin tức </a></li>
+                    <Link to="/" className="navLink">Trang chủ</Link>
+                    <Link to="/flights" className="navLink">Trận đấu</Link>
+                    <Link to="/events" className="navLink">Sự kiện</Link>
+                    <Link to="/posts" className="navLink">Tin tức</Link>
                     <Link to={`/members/${currentClubId}`}>Thành viên</Link>
                     <Link to={`/ranking/${currentClubId}`}>Xếp hạng</Link>
                 </ul>

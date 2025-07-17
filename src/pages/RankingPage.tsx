@@ -6,8 +6,8 @@ const RankingPage = () => {
     return (
         <div>
             <Navbar/>
-            <h2>Ranking Page</h2>
-            <p>Club ID: {id}</p>
+            <h2>Bảng xếp hạng thành viên {id}</h2>
+            <p>Bảng xếp hạng dựa trên thành tích và số điểm tích lũy</p>
         </div>
     );
 };
